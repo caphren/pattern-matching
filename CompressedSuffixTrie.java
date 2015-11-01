@@ -14,10 +14,11 @@ public class CompressedSuffixTrie {
 	 * openFile: O(n) -see analysis below; n is length of file/sequence/string
 	 * addSubstring O(s) -see analysis below; s is length of substring
 	 * 		s is sum(1, 2, ..., n-1, n)/n = n(1+n)/2n = (1+n)/2 => O(n)
-	 * 		Note: this method is called n times, so 
+	 * 		Note: this method is called n times, so in this constructor
+            it has running time O(sn) => O(n^2)
 	 * compress O(n) -see analysis below; n is size of subtree, which is proportional to length of sequence
 	 * 
-	 * Combining the above gives O(n + n(n) + n) => O(n^2)
+	 * Combining the above gives O(n + n^2 + n) => O(2n + n^2) => O(n^2)
 	 * 
 	 */
 	public CompressedSuffixTrie(String f) {
